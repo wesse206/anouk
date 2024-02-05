@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  </head>
+  <body>
+    <section *ngIf="notyes" class="w3-container w3-section w3-center">
+      <h3 class="w3-title w3-text-black w3-bold">
+        Two can play at this game...
+      </h3>
+      <h1 class="w3-title w3-wide w3-text-black w3-bold">
+        Sal jy saam met my na die senior bal gaan?
+      </h1>
+
+      <img class="w3-image w3-round w3-card" [src]="image" />
+      <div class="w3-padding w3-margin">
+        <button
+          class="w3-button w3-black w3-round w3-margin"
+          (click)="SheSaidYes()"
+        >
+          Ja
+        </button>
+        <button
+          class="w3-button w3-black w3-round w3-margin"
+          (click)="ChangeResponse()"
+        >
+          {{ altResponse }}
+        </button>
+      </div>
+    </section>
+    <section
+      *ngIf="!notyes"
+      class="w3-container w3-section w3-center"
+      style="background-image: url('https://media1.tenor.com/m/NXvU9jbBUGMAAAAC/fireworks.gif')"
+    >
+      <h1 class="w3-title w3-text-black w3-bold w3-card w3-white">
+        Yay! Nou kan ons saam in rooi gaan, en baie oulik lyk :)
+      </h1>
+      <img class="w3-image w3-round w3-card" [src]="image" />
+    </section>
+  </body>
+</html>
